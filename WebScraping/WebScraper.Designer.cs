@@ -58,7 +58,7 @@
             // 
             // stop_btn
             // 
-            this.stop_btn.Location = new System.Drawing.Point(93, 12);
+            this.stop_btn.Location = new System.Drawing.Point(266, 12);
             this.stop_btn.Name = "stop_btn";
             this.stop_btn.Size = new System.Drawing.Size(75, 23);
             this.stop_btn.TabIndex = 4;
@@ -73,7 +73,7 @@
             this.RBoxDisplay.TabIndex = 5;
             this.RBoxDisplay.Text = "";
             // 
-            // MainWindow
+            // WebScraper
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -81,8 +81,8 @@
             this.Controls.Add(this.RBoxDisplay);
             this.Controls.Add(this.stop_btn);
             this.Controls.Add(this.start_btn);
-            this.Name = "MainWindow";
-            this.Text = "Form1";
+            this.Name = "WebScraper";
+            this.Text = "Scraping only";
             this.ResumeLayout(false);
 
         }

@@ -1,7 +1,3 @@
-C:\Users\USER\source\repos\WebScraping\WebScraping\obj\Debug\WebScraping.csprojAssemblyReference.cache
-C:\Users\USER\source\repos\WebScraping\WebScraping\obj\Debug\WebScraping.Properties.Resources.resources
-C:\Users\USER\source\repos\WebScraping\WebScraping\obj\Debug\WebScraping.csproj.GenerateResource.cache
-C:\Users\USER\source\repos\WebScraping\WebScraping\obj\Debug\WebScraping.csproj.CoreCompileInputs.cache
 C:\Users\USER\source\repos\WebScraping\WebScraping\bin\Debug\WebScraping.exe.config
 C:\Users\USER\source\repos\WebScraping\WebScraping\bin\Debug\WebScraping.exe
 C:\Users\USER\source\repos\WebScraping\WebScraping\bin\Debug\WebScraping.pdb
@@ -10,7 +6,11 @@ C:\Users\USER\source\repos\WebScraping\WebScraping\bin\Debug\System.Runtime.Comp
 C:\Users\USER\source\repos\WebScraping\WebScraping\bin\Debug\System.Text.Encoding.CodePages.dll
 C:\Users\USER\source\repos\WebScraping\WebScraping\bin\Debug\AngleSharp.xml
 C:\Users\USER\source\repos\WebScraping\WebScraping\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\USER\source\repos\WebScraping\WebScraping\obj\Debug\WebScraping.csprojAssemblyReference.cache
+C:\Users\USER\source\repos\WebScraping\WebScraping\obj\Debug\WebScraping.Properties.Resources.resources
+C:\Users\USER\source\repos\WebScraping\WebScraping\obj\Debug\WebScraping.csproj.GenerateResource.cache
+C:\Users\USER\source\repos\WebScraping\WebScraping\obj\Debug\WebScraping.csproj.CoreCompileInputs.cache
 C:\Users\USER\source\repos\WebScraping\WebScraping\obj\Debug\WebScraping.csproj.CopyComplete
 C:\Users\USER\source\repos\WebScraping\WebScraping\obj\Debug\WebScraping.exe
 C:\Users\USER\source\repos\WebScraping\WebScraping\obj\Debug\WebScraping.pdb
-C:\Users\USER\source\repos\WebScraping\WebScraping\obj\Debug\WebScraping.CityDetail.resources
+C:\Users\USER\source\repos\WebScraping\WebScraping\obj\Debug\WebScraping.WebScraper.resources

@@ -22,39 +22,11 @@ using System.Globalization;
 namespace WebScraping
 {
 
-    public class CityDetail
-    {
-        public CityDetail()
-        {
-            UniversalDetail = new List<string>();
-        }
-        public List<string> UniversalDetail { get; set; }
-
-        public void PrintInConsole()
-        {
-            Console.WriteLine("start from here -----------");
-            foreach(var a in UniversalDetail)
-            {
-                Console.WriteLine(a);
-            }
-            Console.WriteLine("ended here -----------");
-        }
-
-        public string PrintInString(string delimiter)
-        {
-            string res = null;
-            foreach(var a in UniversalDetail)
-            {
-                res += a + delimiter;
-            }
-            return res;
-        }
-    }
-
     public partial class WebScraper : Form
     {
         public WebScraper()
         {
+            //RBoxDisplay.AppendText($"{""}");
             InitializeComponent();
         }
 
@@ -63,6 +35,7 @@ namespace WebScraping
 
         private void start_btn_Click(object sender, EventArgs e)
         {
+            RBoxDisplay.SelectedText = "";
             StartScraping();
         }
 
@@ -83,22 +56,13 @@ namespace WebScraping
             GetScrapeResults(document);
         }
 
-        private static string[] GetFileNames(string path, string filter, int limit)
+        private static string[] GetFileNames(string path, string filter)
         {
             string[] files = Directory.GetFiles(path, filter);
 
-            if(files.Length < limit)
-            {
-                for (int i = 0; i < files.Length; i++)
-                    files[i] = Path.GetFileName(files[i]);
-                return files;
-            }
-            else
-            {
-                for (int i = 0; i < limit; i++)
-                    files[i] = Path.GetFileName(files[i]);
-                return files;
-            }
+            for (int i = 0; i < files.Length; i++)
+                files[i] = Path.GetFileName(files[i]);
+            return files;
         }
 
         private int CheckLocalFileName(string[] name, string nowDate)
@@ -125,8 +89,14 @@ namespace WebScraping
 
             //check local files
             //aaaaa, just do that later :"
-            string thePath = Directory.GetCurrentDirectory() + "\\output\\";
-            string[] local_files = GetFileNames(thePath, "*.txt", 3);
+            string foldername = currentDateTime.Remove(currentDateTime.Length - 3, 3);
+            string outputpath = Directory.GetCurrentDirectory() + "\\output\\" + foldername + "\\";
+
+            bool exists = System.IO.Directory.Exists(outputpath);
+            if (!exists)
+                return 1;
+
+            string[] local_files = GetFileNames(outputpath, "*.txt");
 
             int checkRes = CheckLocalFileName(local_files, currentDateTime);
 
@@ -308,8 +278,16 @@ namespace WebScraping
         private void WriteTheLists(List<CityDetail> thelist)
         {
             //think about this later
-            string thispath = Directory.GetCurrentDirectory();
-            string filename = thispath + "\\output\\" + currentDateTime + ".txt";
+            
+            //take only year, month, and day
+            string foldername = currentDateTime.Remove(currentDateTime.Length - 3, 3);
+            string outputpath = Directory.GetCurrentDirectory() + "\\output\\" + foldername + "\\";
+
+            bool exists = System.IO.Directory.Exists(outputpath);
+            if (!exists)
+                System.IO.Directory.CreateDirectory(outputpath);
+
+            string filename = outputpath + currentDateTime + ".00.txt";
             //string filename = getTime() + ".txt";
             //string[] arrFinalStr = new string[thelist.Count()];
             List<string> finalStr = new List<string>();
@@ -347,10 +325,14 @@ namespace WebScraping
 
         private void UseLocalData()
         {
-            string thispath = Directory.GetCurrentDirectory();
-            string filename = thispath + "\\output\\" + currentDateTime + ".00.txt";
+            //string thispath = Directory.GetCurrentDirectory();
+            //string filename = thispath + "\\output\\" + currentDateTime + ".00.txt";
 
-            string readText = File.ReadAllText(filename);
+            string foldername = currentDateTime.Remove(currentDateTime.Length - 3, 3);
+            string outputpath = Directory.GetCurrentDirectory() + "\\output\\" + foldername + "\\";
+            outputpath = outputpath + currentDateTime + ".00.txt";
+
+            string readText = File.ReadAllText(outputpath);
 
             string[] collectedData = splitLocalFileRes(readText);
 

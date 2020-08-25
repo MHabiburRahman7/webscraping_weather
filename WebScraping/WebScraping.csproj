@@ -58,7 +58,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="WebScraper.cs" />
+    <Compile Include="WebScraper.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="WebScraper.Designer.cs">
       <DependentUpon>WebScraper.cs</DependentUpon>
     </Compile>
