@@ -298,7 +298,7 @@ namespace WebScraping
 
             File.WriteAllLines(filename, finalStr.ToArray());
 
-            RBoxDisplay.AppendText($"{"\n\nsaved as " + finalStr}");
+            RBoxDisplay.AppendText($"{"\nsaved in:" + outputpath + "\n\n"}");
         }
 
         private void DoScraping(IHtmlDocument document)
@@ -336,6 +336,7 @@ namespace WebScraping
 
             string[] collectedData = splitLocalFileRes(readText);
 
+            RBoxDisplay.AppendText($"{"Fetch data from :" + outputpath + "\n\n"}");
             RBoxDisplay.AppendText($"{"-----FETCHED FROM LOCAL DATA-----\n"}");
             foreach (var cd in collectedData)
             {
